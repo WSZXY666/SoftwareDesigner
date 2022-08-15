@@ -3,11 +3,11 @@ package DesignPatterns.SimpleFactory;
 
 public class main {
     public static void main(String[] args) {
-        Product product1 = Factory.createProduct("1");
-        product1.info();
+        Product productA = Factory.createProduct("A");
+        productA.info();
 
-        Product product2 = Factory.createProduct("2");
-        product2.info();
+        Product productB = Factory.createProduct("B");
+        productB.info();
     }
 }
 
@@ -15,11 +15,11 @@ class Factory{
     public static Product createProduct(String type){
         Product product = null;
         switch (type){
-            case "1":
-                product = new Product1();
+            case "A":
+                product = new ProductA();
                 break;
-            case "2":
-                product = new Product2();
+            case "B":
+                product = new ProductB();
                 break;
             default:
                 System.out.println("没有" + type + "类型的产品！");
@@ -33,18 +33,18 @@ abstract class Product{
     public abstract void info();
 }
 
-class Product1 extends Product{
+class ProductA extends Product{
 
     @Override
     public void info() {
-        System.out.println("产品的信息：1");
+        System.out.println("产品的信息：A");
     }
 }
 
-class Product2 extends Product{
+class ProductB extends Product{
 
     @Override
     public void info() {
-        System.out.println("产品的信息：2");
+        System.out.println("产品的信息：B");
     }
 }
