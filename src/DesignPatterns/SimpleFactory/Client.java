@@ -1,7 +1,7 @@
 package DesignPatterns.SimpleFactory;
 //简单工厂模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Product productA = Factory.createProduct("A");
         productA.info();

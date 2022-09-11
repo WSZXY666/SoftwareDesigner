@@ -1,7 +1,7 @@
 package DesignPatterns.ChuangZ.AbstractFactory;
 //抽象工厂模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Factory factory1 = new Factory1();
         ProductA productA1 = factory1.createProductA();
@@ -19,6 +19,7 @@ public class main {
 
 interface Factory {
     ProductA createProductA();
+
     ProductB createProductB();
 }
 
@@ -87,4 +88,3 @@ class ProductB2 implements ProductB {
         System.out.println("产品的信息：B2");
     }
 }
-

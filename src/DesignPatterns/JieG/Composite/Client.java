@@ -4,7 +4,7 @@ package DesignPatterns.JieG.Composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         AbstractFile root = new Folder("root");  //实例化根文件夹
 

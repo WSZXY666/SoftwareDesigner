@@ -1,7 +1,7 @@
 package DesignPatterns.JieG.Facade;
 //外观模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Facade facade = new Facade();
 

@@ -1,7 +1,7 @@
 package DesignPatterns.JieG.Flyweight;
 //享元模式
 
-public class main {
+public class Client1 {
     public static void main(String[] args) {
         PieceFactory pieceFactory = new PieceFactory();
 

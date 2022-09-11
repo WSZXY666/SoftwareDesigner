@@ -1,7 +1,7 @@
 package DesignPatterns.JieG.Bridge;
 //桥接模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Product productA1 = new ProductA();  //实例化产品A1
         Product productA2 = new ProductA();

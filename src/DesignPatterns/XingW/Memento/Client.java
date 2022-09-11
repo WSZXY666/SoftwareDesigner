@@ -4,7 +4,7 @@ package DesignPatterns.XingW.Memento;
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Caretaker caretaker = new Caretaker();
         Originator originator = new Originator();

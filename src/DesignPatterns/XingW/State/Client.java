@@ -98,7 +98,7 @@ class StateB implements State{  //无货
         }
     }
 }*/
-public class main {
+public class Client {
     public static void main(String[] args) {
         Context context = new Context(); // count：3
 

@@ -1,7 +1,7 @@
 package DesignPatterns.ChuangZ.Singleton;
 //单例模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Danl danl1 = Danl.getInstance();
         Danl danl2 = Danl.getInstance();

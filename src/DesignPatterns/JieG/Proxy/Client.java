@@ -1,6 +1,6 @@
 package DesignPatterns.JieG.Proxy;
 //代理模式
-public class main {
+public class Client {
     public static void main(String[] args) {
         RealSubject realSubject = new RealSubject();
         Proxy proxy = new Proxy(realSubject);

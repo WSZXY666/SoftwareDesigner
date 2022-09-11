@@ -3,7 +3,7 @@ package DesignPatterns.XingW.Observer;
 
 import java.util.*;
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Subject subjectA = new ConcreteSubject("目标A");
 

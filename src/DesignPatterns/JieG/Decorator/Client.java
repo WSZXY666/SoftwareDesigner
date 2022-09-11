@@ -1,7 +1,7 @@
 package DesignPatterns.JieG.Decorator;
 //装饰器模式
 
-/*public class main {
+/*public class Client {
     public static void main(String[] args) {
         Person zhangsan = new Student("汪圣哲");
         zhangsan.Operation();
@@ -75,7 +75,7 @@ class DecoratorC extends Decorator{
         System.out.print("、吃鸡");
     }
 }*/
-public class main {
+public class Client {
     public static void main(String[] args) {
         Person zhangsan = new Student("张三");
 

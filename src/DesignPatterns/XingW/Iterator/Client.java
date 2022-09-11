@@ -3,7 +3,7 @@ package DesignPatterns.XingW.Iterator;
 
 import java.util.*;
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         BookAggregate bookAggregate = new BookAggregate();
 

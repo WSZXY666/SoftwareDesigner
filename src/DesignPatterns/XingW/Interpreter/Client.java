@@ -3,7 +3,7 @@ package DesignPatterns.XingW.Interpreter;
 
 import java.util.*;
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Long start = System.currentTimeMillis();
 

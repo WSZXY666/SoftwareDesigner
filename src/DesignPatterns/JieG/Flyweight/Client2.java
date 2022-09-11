@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class main2 {
+public class Client2 {
     public static void main(String[] args) {
         ShapeFactory factory = new ShapeFactory();
 

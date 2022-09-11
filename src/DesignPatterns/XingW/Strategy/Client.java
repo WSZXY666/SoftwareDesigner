@@ -1,7 +1,7 @@
 package DesignPatterns.XingW.Strategy;
 //策略模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         AddStrategy add = new AddStrategy();
         SubtractionStrategy subtraction = new SubtractionStrategy();

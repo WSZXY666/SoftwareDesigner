@@ -1,7 +1,7 @@
 package DesignPatterns.ChuangZ.FactoryMethod;
 //工厂方法模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Factory factory2A = new FactoryA();
         Product product2A = factory2A.createProduct();

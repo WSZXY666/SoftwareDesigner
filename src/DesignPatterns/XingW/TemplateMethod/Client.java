@@ -1,7 +1,7 @@
 package DesignPatterns.XingW.TemplateMethod;
 //模块方法模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         // 父类名 对象名 = new 子类名();
 

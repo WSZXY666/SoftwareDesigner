@@ -1,7 +1,7 @@
 package DesignPatterns.XingW.Mediator;
 //中介者模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         ConcreteMediator mediator = new ConcreteMediator();
 

@@ -1,7 +1,7 @@
 package DesignPatterns.JieG.Adapter;
 //适配器模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         USB usb = new Adapter();
         usb.Request();

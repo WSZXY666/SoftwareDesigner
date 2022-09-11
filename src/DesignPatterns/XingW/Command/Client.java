@@ -1,7 +1,7 @@
 package DesignPatterns.XingW.Command;
 //命令模式
 
-public class main {
+public class Client {
     public static void main(String[] args) {
         Tv tv = new Tv(); // 接收者 对象 电视机
         Command onCommand = new OnCommand(tv); // 命令对象 开机命令
