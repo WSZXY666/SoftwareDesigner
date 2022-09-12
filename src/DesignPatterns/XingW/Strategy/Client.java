@@ -34,7 +34,7 @@ class OperationContext{
 }
 
 interface Strategy{
-    public void TwoNumberOperation(int a,int b);
+    void TwoNumberOperation(int a, int b);
 }
 
 class AddStrategy implements Strategy{

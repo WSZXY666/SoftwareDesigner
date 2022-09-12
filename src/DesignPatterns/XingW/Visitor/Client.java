@@ -21,12 +21,69 @@ public class Client {
     }
 }
 
-interface Visitor{
+abstract class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public abstract void Accept(Visitor visitor);
+}
+
+class Student extends Person {
+    private int score;
+
+    public Student(String name, int age, int score) {
+        super(name, age);
+        this.score = score;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    @Override
+    public void Accept(Visitor visitor) {
+        visitor.visitstu(this);  //3、传入的学生再返回到访问学生方法中
+    }
+}
+
+class Teacher extends Person {
+    private int workyear;
+
+    public Teacher(String name, int age, int workyear) {
+        super(name, age);
+        this.workyear = workyear;
+    }
+
+    public int getWorkyear() {
+        return workyear;
+    }
+
+    @Override
+    public void Accept(Visitor visitor) {
+        visitor.visittea(this);  //3、传入的老师再返回到访问老师方法中
+    }
+}
+
+interface Visitor {
     public void visitstu(Student student);
+
     public void visittea(Teacher teacher);
 }
 
-class Visitor1 implements Visitor{
+class Visitor1 implements Visitor {
     private int studentAgeSum = 0;
     private int teacherAgeSum = 0;
 
@@ -51,7 +108,7 @@ class Visitor1 implements Visitor{
     }
 }
 
-class Visitor2 implements Visitor{
+class Visitor2 implements Visitor {
     private int studentSorceMax = -1;
     private int teacherWorkyearMax = -1;
 
@@ -65,91 +122,33 @@ class Visitor2 implements Visitor{
 
     @Override
     public void visitstu(Student student) {
-        System.out.println("访问者2访问学生：" + student.getName() + " " +"成绩：" + student.getScore());  //4、输出要访问的学生
-        studentSorceMax = Math.max(student.getScore(),studentSorceMax);
+        System.out.println("访问者2访问学生：" + student.getName() + " " + "成绩：" + student.getScore());  //4、输出要访问的学生
+        studentSorceMax = Math.max(student.getScore(), studentSorceMax);
     }
 
     @Override
     public void visittea(Teacher teacher) {
-        System.out.println("访问者2访问老师：" + teacher.getName() + " " +"工龄：" + teacher.getWorkyear());  //4、输出要访问的老师
-        teacherWorkyearMax = Math.max(teacher.getWorkyear(),teacherWorkyearMax);
+        System.out.println("访问者2访问老师：" + teacher.getName() + " " + "工龄：" + teacher.getWorkyear());  //4、输出要访问的老师
+        teacherWorkyearMax = Math.max(teacher.getWorkyear(), teacherWorkyearMax);
     }
 }
 
-class PersonStructure{
+class PersonStructure {
     private List<Person> personList = new ArrayList<>();
 
-    public PersonStructure(){
-        personList.add(new Student("张三",21,89));
-        personList.add(new Student("李四",22,75));
-        personList.add(new Student("王五",20,95));
+    public PersonStructure() {
+        personList.add(new Student("张三", 21, 89));
+        personList.add(new Student("李四", 22, 75));
+        personList.add(new Student("王五", 20, 95));
 
-        personList.add(new Teacher("谢老师",35,7));
-        personList.add(new Teacher("汪老师",40,15));
-        personList.add(new Teacher("王老师",27,3));
+        personList.add(new Teacher("谢老师", 35, 7));
+        personList.add(new Teacher("汪老师", 40, 15));
+        personList.add(new Teacher("王老师", 27, 3));
     }
 
-    public void Accept(Visitor visitor){
-        for (Person person : personList){
+    public void Accept(Visitor visitor) {
+        for (Person person : personList) {
             person.Accept(visitor);  //2、接收访问者的访问请求，遍历的人（person）传入Person类的Accept方法
         }
-    }
-}
-
-abstract class Person{
-    private String name;
-    private int age;
-
-    public Person(String name,int age){
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public abstract void Accept(Visitor visitor);
-}
-
-class Student extends Person{
-    private int score;
-
-    public Student(String name,int age,int score){
-        super(name,age);
-
-        this.score = score;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    @Override
-    public void Accept(Visitor visitor) {
-        visitor.visitstu(this);  //3、传入的学生再返回到访问学生方法中
-    }
-}
-
-class Teacher extends Person{
-    private int workyear;
-
-    public Teacher(String name,int age,int workyear){
-        super(name,age);
-
-        this.workyear = workyear;
-    }
-
-    public int getWorkyear() {
-        return workyear;
-    }
-
-    @Override
-    public void Accept(Visitor visitor) {
-        visitor.visittea(this);  //3、传入的老师再返回到访问老师方法中
     }
 }
