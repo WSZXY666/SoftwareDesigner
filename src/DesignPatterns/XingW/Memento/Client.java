@@ -51,7 +51,7 @@ class Originator{
     }
 }
 
-//备忘录
+//备忘录（软件里面的一条条备忘录）
 class Memento{
     private String state;
 
@@ -65,7 +65,7 @@ class Memento{
 
 }
 
-//管理员
+//管理员（备忘录软件）
 class Caretaker{
     private List<Memento> mementoList = new ArrayList<>();
 
