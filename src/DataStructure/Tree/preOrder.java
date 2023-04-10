@@ -20,13 +20,17 @@ public class preOrder {
         TreeNode node5 = new TreeNode("E");
         TreeNode node6 = new TreeNode("F");
         TreeNode node7 = new TreeNode("G");
+        TreeNode node8 = new TreeNode("H");
+        TreeNode node9 = new TreeNode("I");
 
         node1.left = node2;
         node1.right = node3;
         node2.left = node4;
         node2.right = node5;
-        node3.right = node6;
-        node5.left = node7;
+        node3.left = node6;
+        node3.right = node7;
+        node5.left = node8;
+        node5.right = node9;
 
         System.out.println("先序遍历：");
         preOrderD(node1);

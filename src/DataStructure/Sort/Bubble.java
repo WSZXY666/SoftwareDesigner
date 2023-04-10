@@ -9,6 +9,8 @@ public class Bubble {
         System.out.println("排序前：");
         print_arr(arr);
 
+        System.out.println("\n");
+        System.out.println("排序过程：");
         bubble_sort(arr, n); //排序
 
         System.out.println("\n排序后：");
@@ -31,6 +33,8 @@ public class Bubble {
             }
             if (!swapped)
                 break;  // 若无交换发生，结束
+            print_arr(arr);
+            System.out.print("\n");
         }
     }
 

@@ -9,13 +9,17 @@ public class midOrder {
         TreeNode2 node5 = new TreeNode2("E");
         TreeNode2 node6 = new TreeNode2("F");
         TreeNode2 node7 = new TreeNode2("G");
+        TreeNode2 node8 = new TreeNode2("H");
+        TreeNode2 node9 = new TreeNode2("I");
 
         node1.left = node2;
         node1.right = node3;
         node2.left = node4;
         node2.right = node5;
-        node3.right = node6;
-        node5.left = node7;
+        node3.left = node6;
+        node3.right = node7;
+        node5.left = node8;
+        node5.right = node9;
 
         System.out.println("中序遍历：");
         midOrderD(node1);
