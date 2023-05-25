@@ -23,32 +23,32 @@ class Facade {
     }
 
     public void methodA() {
-        subSystemA.method1();
+        subSystemA.method();
     }
 
     public void methodB() {
-        subSystemB.method2();
+        subSystemB.method();
     }
 
     public void methodC() {
-        subSystemC.method3();
+        subSystemC.method();
     }
 }
 
 class SubSystemA {
-    public void method1() {
+    public void method() {
         System.out.println("执行子系统一的功能");
     }
 }
 
 class SubSystemB {
-    public void method2() {
+    public void method() {
         System.out.println("执行子系统二的功能");
     }
 }
 
 class SubSystemC {
-    public void method3() {
+    public void method() {
         System.out.println("执行子系统三的功能");
     }
 }

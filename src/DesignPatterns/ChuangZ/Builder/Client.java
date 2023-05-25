@@ -22,12 +22,15 @@ public class Client {
 
 class Director {
     public void Construct(Builder builder) {
-        builder.Buildpart();
+        builder.BuildpartA();
+        builder.BuildpartB();
     }
 }
 
 abstract class Builder {
-    public abstract void Buildpart();
+    public abstract void BuildpartA();
+
+    public abstract void BuildpartB();
 
     public abstract Product getResult();
 }
@@ -36,13 +39,13 @@ class Builder1 extends Builder {
     Product product = new Product();
 
     @Override
-    public void Buildpart() {
-        product.Add("A");
-        product.Add("B");
-        product.Add("C");
-        product.Add("D");
-        product.Add("E");
-        product.Add("F");
+    public void BuildpartA() {
+        product.Add("瓶身");
+    }
+
+    @Override
+    public void BuildpartB() {
+        product.Add("瓶盖");
     }
 
     @Override
@@ -55,11 +58,13 @@ class Builder2 extends Builder {
     Product product = new Product();
 
     @Override
-    public void Buildpart() {
-        product.Add("A");
-        product.Add("B");
-        product.Add("C");
-        product.Add("D");
+    public void BuildpartA() {
+        product.Add("醋");
+    }
+
+    @Override
+    public void BuildpartB() {
+        product.Add("小苏打");
     }
 
     @Override
@@ -76,7 +81,7 @@ class Product {
     }
 
     public void show() {
-        System.out.print("产品的组成：" );
+        System.out.print("产品的组成：");
         for (String s : parts) {
             System.out.print(s + " ");
         }

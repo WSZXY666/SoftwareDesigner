@@ -1,4 +1,5 @@
 package DesignPatterns.JieG.Proxy;
+
 //代理模式
 public class Client {
     public static void main(String[] args) {
@@ -8,12 +9,12 @@ public class Client {
     }
 }
 
-interface Subject{
-    public void buy();
+interface Subject {
+    void buy();
 }
 
 //真正的主题只顾付钱，不需要知道过程，只需要结果，过程由代理完成
-class RealSubject implements Subject{
+class RealSubject implements Subject {
 
     @Override
     public void buy() {
@@ -22,10 +23,10 @@ class RealSubject implements Subject{
 }
 
 //代理负责代理工作
-class Proxy implements Subject{
+class Proxy implements Subject {
     protected RealSubject realSubject;
 
-    public Proxy(RealSubject realSubject){
+    public Proxy(RealSubject realSubject) {
         this.realSubject = realSubject;
     }
 

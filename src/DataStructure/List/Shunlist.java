@@ -1,7 +1,7 @@
 package DataStructure.List;
 
 public class Shunlist {
-    final int N = 10; //容量
+    final int N = 20; //容量
     int[] a;
     int n; //表长
 
@@ -11,11 +11,7 @@ public class Shunlist {
             a[i] = i + 1;
         }
         n = N / 2;
-
-        for (int i = 0; i < n; i++) {
-            System.out.print(a[i] + " ");
-        }
-        System.out.print("\n");
+        print();
     }
 
     void insert(int k, int x) {
@@ -27,11 +23,7 @@ public class Shunlist {
             }
             a[k - 1] = x; //用要插入的数替换原来位置的数
             n++;
-
-            for (int i = 0; i < n; i++) {
-                System.out.print(a[i] + " ");
-            }
-            System.out.print("\n");
+            print();
         }
     }
 
@@ -43,12 +35,15 @@ public class Shunlist {
                 a[i] = a[i + 1];
             }
             n--;
-
-            for (int i = 0; i < n; i++) {
-                System.out.print(a[i] + " ");
-            }
-            System.out.print("\n");
+            print();
         }
+    }
+
+    void print(){
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.print("\n");
     }
 
     void getElements(int k) {
@@ -62,8 +57,8 @@ public class Shunlist {
     public static void main(String[] args) {
         Shunlist list = new Shunlist();
         list.init();
-        list.insert(4, 985);
-        list.delete(5);
-        list.getElements(4);
+        list.insert(7, 985);
+        list.delete(9);
+        list.getElements(7);
     }
 }

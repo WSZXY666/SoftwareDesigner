@@ -4,23 +4,22 @@ import java.util.*;
 
 public class Client2 {
     public static void main(String[] args) {
-        ConcreteSubject2 subject2 = new ConcreteSubject2();
+        ConcreteSubject2 subject2 = new ConcreteSubject2(); //妈妈
+        ConcreteObserver2 observer21 = new ConcreteObserver2("张三"); //大儿子
+        ConcreteObserver2 observer22 = new ConcreteObserver2("李四"); //二儿子
+        ConcreteObserver2 observer23 = new ConcreteObserver2("王五"); //小儿子
 
-        ConcreteObserver2 observer21 = new ConcreteObserver2("张三");
-        ConcreteObserver2 observer22 = new ConcreteObserver2("李四");
-        ConcreteObserver2 observer23 = new ConcreteObserver2("王五");
+        subject2.Add(observer21); //大儿子出生
+        subject2.Add(observer22); //二儿子出生
+        subject2.Add(observer23); //小儿子出生
 
-        subject2.Add(observer21);
-        subject2.Add(observer22);
-        subject2.Add(observer23);
-
-        subject2.setSubjectState("开饭了！");
-        subject2.Notify();
+        subject2.setSubjectState("开饭了！"); //妈妈想通知儿子们吃饭
+        subject2.Notify(); //妈妈通知儿子们开饭了
 
         System.out.println("========================================");
-        subject2.Delete(observer22);
-        subject2.setSubjectState("睡觉了！");
-        subject2.Notify();
+        subject2.Delete(observer22); //二儿子去世
+        subject2.setSubjectState("睡觉了！"); //妈妈想通知儿子们睡觉
+        subject2.Notify(); //妈妈通知儿子们睡觉了
 
     }
 }

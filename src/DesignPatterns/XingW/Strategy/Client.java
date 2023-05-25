@@ -9,35 +9,35 @@ public class Client {
 
         OperationContext context = new OperationContext(add);
         System.out.print("两数相加：");
-        context.Operation(2022,528);
+        context.Operation(2022, 528);
 
         context = new OperationContext(subtraction);
         System.out.print("两数相减：");
-        context.Operation(2022,528);
+        context.Operation(2022, 528);
 
         context = new OperationContext(multiply);
         System.out.print("两数相乘：");
-        context.Operation(2022,528);
+        context.Operation(2022, 528);
     }
 }
 
-class OperationContext{
-    private Strategy strategy;
+class OperationContext {
+    private final Strategy strategy;
 
-    public OperationContext(Strategy strategy){
+    public OperationContext(Strategy strategy) {
         this.strategy = strategy;
     }
 
-    public void Operation(int a,int b){
-        strategy.TwoNumberOperation(a,b);
+    public void Operation(int a, int b) {
+        strategy.TwoNumberOperation(a, b);
     }
 }
 
-interface Strategy{
+interface Strategy {
     void TwoNumberOperation(int a, int b);
 }
 
-class AddStrategy implements Strategy{
+class AddStrategy implements Strategy {
 
     @Override
     public void TwoNumberOperation(int a, int b) {
@@ -45,7 +45,7 @@ class AddStrategy implements Strategy{
     }
 }
 
-class SubtractionStrategy implements Strategy{
+class SubtractionStrategy implements Strategy {
 
     @Override
     public void TwoNumberOperation(int a, int b) {
@@ -53,7 +53,7 @@ class SubtractionStrategy implements Strategy{
     }
 }
 
-class MultiplyStrategy implements Strategy{
+class MultiplyStrategy implements Strategy {
 
     @Override
     public void TwoNumberOperation(int a, int b) {

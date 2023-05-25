@@ -10,10 +10,10 @@ public class Linklist1 {
         length = 0;
     }
 
-    boolean insert(int k, Node node) {
+    void insert(int k, Node node) {
         if (k < 1 || k > length + 1) { //插入位置的条件
             System.out.println("插入位置不合法！");
-            return false;
+            return;
         }
 
         if (k == 1) { //插入位置为1时特殊，另行操作
@@ -21,7 +21,7 @@ public class Linklist1 {
             list = node;
             length++;
             System.out.println("插入成功！");
-            return true;
+            return;
         }
 
         int i = 1;
@@ -33,27 +33,26 @@ public class Linklist1 {
 
         if (p == null) {
             System.out.println("插入位置不合法！");
-            return false;
+            return;
         }
 
         node.next = p.next; //结点关系转换
         p.next = node;
         length++;
         System.out.println("插入成功！");
-        return true;
     }
 
-    boolean delete(int k) {
+    void delete(int k) {
         if (k < 1 || k > length) {
             System.out.println("删除位置不合法！");
-            return false;
+            return;
         }
 
         if (k == 1) {
             list = list.next;
             length--;
             System.out.println("删除成功！");
-            return true;
+            return;
         }
 
         int i = 1;
@@ -67,7 +66,6 @@ public class Linklist1 {
         p.next = s.next;
         System.out.println("删除成功！");
         length--;
-        return true;
     }
 
     Node get(int k) {
@@ -101,7 +99,7 @@ public class Linklist1 {
         list.insert(2, new Node(34));
         list.insert(3, new Node(56));
         list.printList();
-        list.insert(2, new Node(78));
+        list.insert(1, new Node(78));
         list.printList();
         list.delete(1);
         list.printList();

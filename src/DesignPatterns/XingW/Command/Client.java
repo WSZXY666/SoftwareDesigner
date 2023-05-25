@@ -31,12 +31,12 @@ class Invoker { // 请求者
 }
 
 interface Command { // 命令接口
-    void Execute(); // 执行命令
+    void Execute();
 }
 
 // 开机命令
 class OnCommand implements Command {
-    private Tv tv;
+    private final Tv tv;
 
     public OnCommand(Tv tv) {
         this.tv = tv;
@@ -50,7 +50,7 @@ class OnCommand implements Command {
 
 // 关机命令
 class OffCommand implements Command {
-    private Tv tv;
+    private final Tv tv;
 
     public OffCommand(Tv tv) {
         this.tv = tv;

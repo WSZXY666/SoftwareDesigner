@@ -5,16 +5,17 @@ public class Client {
     public static void main(String[] args) {
         Danl danl1 = Danl.getInstance();
         Danl danl2 = Danl.getInstance();
-        Danl danl3 = Danl.getInstance();
-        System.out.println(danl1.getNumber() + " " + danl2.getNumber() + " " + danl3.getNumber());
+        System.out.println(danl1.getNumber() + " " + danl2.getNumber());
 
         danl1.setNumber(1314);
-        System.out.println(danl1.getNumber() + " " + danl2.getNumber() + " " + danl3.getNumber());
+        System.out.println(danl1.getNumber() + " " + danl2.getNumber());
     }
 }
 
-class Danl{
+class Danl {
     private int number = 521;
+
+    private static final Danl instance = new Danl();
 
     public void setNumber(int number) {
         this.number = number;
@@ -24,11 +25,10 @@ class Danl{
         return number;
     }
 
-    private static Danl instance = new Danl();
+    private Danl() {
+    }
 
-    private Danl(){}
-
-    public static Danl getInstance(){
+    public static Danl getInstance() {
         return instance;
     }
 }

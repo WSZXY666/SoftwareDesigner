@@ -129,7 +129,7 @@ interface Subject1 {
 }
 
 class ConcreteSubject1 implements Subject1 {
-    private ArrayList<Observer1> observers;
+    private final ArrayList<Observer1> observers;
     private float a = 0, b = 0, c = 0;
 
     public ConcreteSubject1() {
@@ -155,8 +155,7 @@ class ConcreteSubject1 implements Subject1 {
 
     @Override
     public void Notify() {
-        for (int i = 0; i < observers.size(); i++) {
-            Observer1 observer = observers.get(i);
+        for (Observer1 observer : observers) {
             observer.update(a, b, c);
         }
     }
@@ -170,8 +169,8 @@ class ConcreteObserver1 implements Observer1 {
     private float a;
     private float b;
     private float c;
-    private String name;
-    private Subject1 date;
+    private final String name;
+    private final Subject1 date;
 
     public ConcreteObserver1(String name, Subject1 date) {
         this.name = name;

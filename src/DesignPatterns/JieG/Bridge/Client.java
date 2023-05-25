@@ -30,7 +30,7 @@ public class Client {
     }
 }
 
-abstract class Product{  //抽象产品
+abstract class Product {  //抽象产品
     protected Color color;
     private String name;
 
@@ -49,46 +49,46 @@ abstract class Product{  //抽象产品
     public abstract void Operation();  //operation：操作
 }
 
-class ProductA extends Product{  //A产品
+class ProductA extends Product {  //A产品
     @Override
     public void Operation() {
         color.OperationColor(this.getName());
     }
 }
 
-class ProductB extends Product{  //B产品
+class ProductB extends Product {  //B产品
     @Override
     public void Operation() {
         color.OperationColor(this.getName());
     }
 }
 
-interface Color{  //抽象颜色
-    public void OperationColor(String name);
+interface Color {  //抽象颜色
+    void OperationColor(String name);
 }
 
-class Red implements Color{
+class Red implements Color {
     @Override
     public void OperationColor(String name) {
         System.out.println(name + "：红色");
     }
 }
 
-class Blue implements Color{
+class Blue implements Color {
     @Override
     public void OperationColor(String name) {
         System.out.println(name + "：蓝色");
     }
 }
 
-class Green implements Color{
+class Green implements Color {
     @Override
     public void OperationColor(String name) {
         System.out.println(name + "：绿色");
     }
 }
 
-class Pink implements Color{
+class Pink implements Color {
     @Override
     public void OperationColor(String name) {
         System.out.println(name + "：粉色");

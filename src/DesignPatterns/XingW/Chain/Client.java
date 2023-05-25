@@ -10,11 +10,11 @@ public class Client {
         fud.setNext(yuanz);
         yuanz.setNext(xiaoz);
 
-        fud.HandlerRequest(14);
+        fud.HandlerRequest(28);
     }
 }
 
-abstract class Handler{
+abstract class Handler {
     protected Handler next;
 
     public void setNext(Handler next) {
@@ -24,54 +24,48 @@ abstract class Handler{
     public abstract void HandlerRequest(int request);
 }
 
-class FuD extends Handler{
+class FuD extends Handler {
 
     @Override
     public void HandlerRequest(int request) {
-        if (request <= 7){
+        if (request <= 7) {
             System.out.println("辅导员审批通过！");
-        }
-        else {
-            if (next != null){
+        } else {
+            if (next != null) {
                 next.HandlerRequest(request);
-            }
-            else {
+            } else {
                 System.out.println("无法审批！");
             }
         }
     }
 }
 
-class YuanZ extends Handler{
+class YuanZ extends Handler {
 
     @Override
     public void HandlerRequest(int request) {
-        if (request <= 15){
+        if (request <= 15) {
             System.out.println("院长审批通过！");
-        }
-        else {
-            if (next != null){
+        } else {
+            if (next != null) {
                 next.HandlerRequest(request);
-            }
-            else {
+            } else {
                 System.out.println("无法审批！");
             }
         }
     }
 }
 
-class XiaoZ extends Handler{
+class XiaoZ extends Handler {
 
     @Override
     public void HandlerRequest(int request) {
-        if (request <= 30){
+        if (request <= 30) {
             System.out.println("校长审批通过！");
-        }
-        else {
-            if (next != null){
+        } else {
+            if (next != null) {
                 next.HandlerRequest(request);
-            }
-            else {
+            } else {
                 System.out.println("无法审批！");
             }
         }

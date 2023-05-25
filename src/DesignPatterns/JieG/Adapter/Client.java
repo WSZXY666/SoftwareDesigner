@@ -3,18 +3,21 @@ package DesignPatterns.JieG.Adapter;
 
 public class Client {
     public static void main(String[] args) {
-        USB usb = new Adapter();
-        usb.Request();
+        USB usb1 = new USB();
+        usb1.Request();
+
+        USB usb2 = new Adapter();
+        usb2.Request();
     }
 }
 
-class USB{  //USB接口
-    public void Request(){
+class USB {  //USB接口
+    public void Request() {
         System.out.println("USB数据线");
     }
 }
 
-class Adapter extends USB{  //转接头
+class Adapter extends USB {  //转接头
     TypeC typeC = new TypeC();
 
     @Override
@@ -23,8 +26,8 @@ class Adapter extends USB{  //转接头
     }
 }
 
-class TypeC{  //TypeC接口
-    public void SpecificRequest(){
+class TypeC {  //TypeC接口
+    public void SpecificRequest() {
         System.out.println("TypeC数据线");
     }
 }

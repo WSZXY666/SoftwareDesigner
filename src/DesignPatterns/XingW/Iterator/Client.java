@@ -10,7 +10,7 @@ public class Client {
         String[] books = {"数据结构", "操作系统", "计算机网络", "计算机组成原理"};
         double[] prices = {20.21, 48.49, 10.11, 24.25};
 
-        for (int i = 0; i < 4; i ++ ) {
+        for (int i = 0; i < 4; i++) {
             bookAggregate.Add(new Book(books[i], prices[i]));
         }
 
@@ -23,8 +23,8 @@ public class Client {
 }
 
 class Book {
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
 
     public Book(String name, double price) {
         this.name = name;
@@ -42,13 +42,14 @@ class Book {
 
 interface Iterator {
     boolean hasNext();
+
     Object next();
 }
 
 //书的迭代器
 class BookIterator implements Iterator {
     private int index;
-    private BookAggregate bookAggregate;
+    private final BookAggregate bookAggregate;
 
     public BookIterator(BookAggregate bookAggregate) {
         this.index = 0;
@@ -57,17 +58,13 @@ class BookIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        if (index < bookAggregate.getSize()) {
-            return true;
-        } else {
-            return false;
-        }
+        return index < bookAggregate.getSize();
     }
 
     @Override
     public Object next() {
         Object obj = bookAggregate.get(index);
-        index ++ ;
+        index++;
 
         return obj;
     }
@@ -79,7 +76,7 @@ interface Aggregate {
 
 //书的聚合
 class BookAggregate implements Aggregate {
-    private List<Book> list = new ArrayList<Book>();
+    private final List<Book> list = new ArrayList<Book>();
 
     public void Add(Book book) {
         list.add(book);

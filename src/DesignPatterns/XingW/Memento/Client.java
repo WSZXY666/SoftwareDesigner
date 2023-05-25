@@ -31,14 +31,14 @@ public class Client {
 }
 
 //原发器(人)
-class Originator{
+class Originator {
     private String state;
 
-    public Memento createMemento(){
+    public Memento createMemento() {
         return new Memento(state);
     }
 
-    public void setMemento(Memento memento){
+    public void setMemento(Memento memento) {
         state = memento.getState();
     }
 
@@ -52,10 +52,10 @@ class Originator{
 }
 
 //备忘录（软件里面的一条条备忘录）
-class Memento{
-    private String state;
+class Memento {
+    private final String state;
 
-    public Memento(String state){
+    public Memento(String state) {
         this.state = state;
     }
 
@@ -66,26 +66,25 @@ class Memento{
 }
 
 //管理员（备忘录软件）
-class Caretaker{
-    private List<Memento> mementoList = new ArrayList<>();
+class Caretaker {
+    private final List<Memento> mementoList = new ArrayList<>();
 
-    public void addMemento(Memento memento){
+    public void addMemento(Memento memento) {
         mementoList.add(memento);
     }
 
-    public Memento getMemento(int index){
-        if (index >= 1 && index <= mementoList.size()){
+    public Memento getMemento(int index) {
+        if (index >= 1 && index <= mementoList.size()) {
             return mementoList.get(index - 1);
-        }
-        else {
+        } else {
             return null;
         }
     }
 
-    public void showMemento(){
+    public void showMemento() {
         int count = 1;
 
-        for (Memento memento : mementoList){
+        for (Memento memento : mementoList) {
             System.out.println("第" + count + "次备份，状态为：" + memento.getState());
             count += 1;
         }

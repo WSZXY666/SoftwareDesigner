@@ -13,31 +13,31 @@ public class Client {
     }
 }
 
-interface Factory{
+interface Factory { //工厂
     Product createProduct();
 }
 
-class FactoryA implements Factory{
+class FactoryA implements Factory { //美的工厂
 
     @Override
-    public Product createProduct() {
+    public Product createProduct() { //美的电磁炉生产线
         return new ProductA();
     }
 }
 
-class FactoryB implements Factory{
+class FactoryB implements Factory { //九阳工厂
 
     @Override
-    public Product createProduct() {
+    public Product createProduct() { //九阳电磁炉生产线
         return new ProductB();
     }
 }
 
-interface Product{
+interface Product { //电磁炉
     void info();
 }
 
-class ProductA implements Product{
+class ProductA implements Product { //美的电磁炉
 
     @Override
     public void info() {
@@ -45,7 +45,7 @@ class ProductA implements Product{
     }
 }
 
-class ProductB implements Product{
+class ProductB implements Product { //九阳电磁炉
 
     @Override
     public void info() {

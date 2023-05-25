@@ -17,13 +17,13 @@ public class Client {
         System.out.println("访问者2的访问记录：");
         Visitor2 visitor2 = new Visitor2();
         structure.Accept(visitor2);
-        System.out.println("学生最高成绩：" + visitor2.getStudentSorceMax() + "\n" + "老师最大工龄：" + visitor2.getTeacherWorkyearMax());
+        System.out.println("学生最高成绩：" + visitor2.getStudentSorceMax() + "\n" + "老师最高工资：" + visitor2.getTeacherSalaryMax());
     }
 }
 
 abstract class Person {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
 
     public Person(String name, int age) {
         this.name = name;
@@ -42,7 +42,7 @@ abstract class Person {
 }
 
 class Student extends Person {
-    private int score;
+    private final int score;
 
     public Student(String name, int age, int score) {
         super(name, age);
@@ -60,15 +60,15 @@ class Student extends Person {
 }
 
 class Teacher extends Person {
-    private int workyear;
+    private final int salary;
 
-    public Teacher(String name, int age, int workyear) {
+    public Teacher(String name, int age, int salary) {
         super(name, age);
-        this.workyear = workyear;
+        this.salary = salary;
     }
 
-    public int getWorkyear() {
-        return workyear;
+    public int getSalary() {
+        return salary;
     }
 
     @Override
@@ -78,9 +78,9 @@ class Teacher extends Person {
 }
 
 interface Visitor {
-    public void visitstu(Student student);
+    void visitstu(Student student);
 
-    public void visittea(Teacher teacher);
+    void visittea(Teacher teacher);
 }
 
 class Visitor1 implements Visitor {
@@ -110,14 +110,14 @@ class Visitor1 implements Visitor {
 
 class Visitor2 implements Visitor {
     private int studentSorceMax = -1;
-    private int teacherWorkyearMax = -1;
+    private int teacherSalaryMax = -1;
 
     public int getStudentSorceMax() {
         return studentSorceMax;
     }
 
-    public int getTeacherWorkyearMax() {
-        return teacherWorkyearMax;
+    public int getTeacherSalaryMax() {
+        return teacherSalaryMax;
     }
 
     @Override
@@ -128,22 +128,22 @@ class Visitor2 implements Visitor {
 
     @Override
     public void visittea(Teacher teacher) {
-        System.out.println("访问者2访问老师：" + teacher.getName() + " " + "工龄：" + teacher.getWorkyear());  //4、输出要访问的老师
-        teacherWorkyearMax = Math.max(teacher.getWorkyear(), teacherWorkyearMax);
+        System.out.println("访问者2访问老师：" + teacher.getName() + " " + "工资：" + teacher.getSalary());  //4、输出要访问的老师
+        teacherSalaryMax = Math.max(teacher.getSalary(), teacherSalaryMax);
     }
 }
 
 class PersonStructure {
-    private List<Person> personList = new ArrayList<>();
+    private final List<Person> personList = new ArrayList<>();
 
     public PersonStructure() {
         personList.add(new Student("张三", 21, 89));
         personList.add(new Student("李四", 22, 75));
         personList.add(new Student("王五", 20, 95));
 
-        personList.add(new Teacher("谢老师", 35, 7));
-        personList.add(new Teacher("汪老师", 40, 15));
-        personList.add(new Teacher("王老师", 27, 3));
+        personList.add(new Teacher("谢老师", 35, 5500));
+        personList.add(new Teacher("汪老师", 40, 6500));
+        personList.add(new Teacher("王老师", 27, 4800));
     }
 
     public void Accept(Visitor visitor) {

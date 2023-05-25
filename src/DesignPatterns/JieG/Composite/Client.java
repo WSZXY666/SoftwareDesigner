@@ -25,7 +25,7 @@ public class Client {
         paint(root);  //输出根文件夹的子文件夹名和子文件名
         System.out.print("\n");
 
-        root.Remove(fileE);  //删除文件E
+        root.Remove(fileC);  //删除文件E
         paint(root);
 
         /*System.out.println(root.Add(folderA));
@@ -35,36 +35,37 @@ public class Client {
         System.out.println(root.Remove(fileA));*/
     }
 
-    static void paint(AbstractFile file){  //打印名称功能
+    static void paint(AbstractFile file) {  //打印名称功能
         file.printNane();  //打印根名称
 
         List<AbstractFile> childrenList = file.getChildren();
-        if (childrenList == null){
+        if (childrenList == null) {
             return;
         }
-        for (AbstractFile children : childrenList){  //遍历子目录
+        for (AbstractFile children : childrenList) {  //遍历子目录
             paint(children);  //打印子目录。若子目录还有子目录，则再次遍历子目录的子目录
         }
     }
 }
 
-abstract class AbstractFile{
+abstract class AbstractFile {
     protected String name;
 
-    public void printNane(){
+    public void printNane() {
         System.out.println(name);
     }
 
-    public abstract boolean Add( AbstractFile file) ;
+    public abstract boolean Add(AbstractFile file);
 
-    public abstract boolean Remove ( AbstractFile file);
+    public abstract boolean Remove(AbstractFile file);
 
     public abstract List<AbstractFile> getChildren();
 }
 
-class Folder extends AbstractFile{
-    private List<AbstractFile> childrenList = new ArrayList<>();
-    public Folder(String name){  //设置名称
+class Folder extends AbstractFile {
+    private final List<AbstractFile> childrenList = new ArrayList<>();
+
+    public Folder(String name) {  //设置名称
         this.name = name;
     }
 
@@ -84,8 +85,8 @@ class Folder extends AbstractFile{
     }
 }
 
-class File extends AbstractFile{
-    public File(String name){
+class File extends AbstractFile {
+    public File(String name) {
         this.name = name;
     }
 

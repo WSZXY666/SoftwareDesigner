@@ -3,10 +3,10 @@ package DesignPatterns.ChuangZ.AbstractFactory;
 
 public class Client {
     public static void main(String[] args) {
-        Factory factory1 = new Factory1();
-        ProductA productA1 = factory1.createProductA();
+        Factory factory1 = new Factory1(); //工厂
+        ProductA productA1 = factory1.createProductA(); //生产线
         ProductB productB1 = factory1.createProductB();
-        productA1.info();
+        productA1.info(); //生产
         productB1.info();
 
         Factory factory2 = new Factory2();
@@ -17,43 +17,43 @@ public class Client {
     }
 }
 
-interface Factory {
+interface Factory { //工厂
     ProductA createProductA();
 
     ProductB createProductB();
 }
 
-class Factory1 implements Factory {
+class Factory1 implements Factory { //美的工厂
 
     @Override
-    public ProductA createProductA() {
+    public ProductA createProductA() { //美的电饭煲生产线
         return new ProductA1();
     }
 
     @Override
-    public ProductB createProductB() {
+    public ProductB createProductB() { //美的电磁炉生产线
         return new ProductB1();
     }
 }
 
-class Factory2 implements Factory {
+class Factory2 implements Factory { //九阳工厂
 
     @Override
-    public ProductA createProductA() {
+    public ProductA createProductA() { //九阳电饭煲生产线
         return new ProductA2();
     }
 
     @Override
-    public ProductB2 createProductB() {
+    public ProductB2 createProductB() { //九阳电磁炉生产线
         return new ProductB2();
     }
 }
 
-interface ProductA {
+interface ProductA { //电饭煲
     void info();
 }
 
-class ProductA1 implements ProductA {
+class ProductA1 implements ProductA { //美的电饭煲
 
     @Override
     public void info() {
@@ -61,7 +61,7 @@ class ProductA1 implements ProductA {
     }
 }
 
-class ProductA2 implements ProductA {
+class ProductA2 implements ProductA { //九阳电饭煲
 
     @Override
     public void info() {
@@ -69,11 +69,11 @@ class ProductA2 implements ProductA {
     }
 }
 
-interface ProductB {
+interface ProductB { //电磁炉
     void info();
 }
 
-class ProductB1 implements ProductB {
+class ProductB1 implements ProductB { //美的电磁炉
 
     @Override
     public void info() {
@@ -81,7 +81,7 @@ class ProductB1 implements ProductB {
     }
 }
 
-class ProductB2 implements ProductB {
+class ProductB2 implements ProductB { //九阳电磁炉
 
     @Override
     public void info() {
