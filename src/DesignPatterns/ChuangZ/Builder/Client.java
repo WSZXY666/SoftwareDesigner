@@ -74,7 +74,7 @@ class Builder2 extends Builder {
 }
 
 class Product {
-    List<String> parts = new ArrayList<String>();
+    List<String> parts = new ArrayList<>();
 
     public void Add(String part) {
         parts.add(part);
